@@ -136,3 +136,17 @@ span {
 .txtarea {
   margin-top: 2rem;
 }
+.marks{
+  font-size: 1rem;
+  color: green;
+  padding-left: 3rem;
+  font-weight: bolder;
+ 
+}
+.showcomment {
+ cursor: pointer;
+color:rgb(30, 104, 30);
+}
+.showcomment:hover{
+  cursor: pointer;
+}

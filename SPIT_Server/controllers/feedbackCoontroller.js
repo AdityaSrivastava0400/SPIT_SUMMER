@@ -12,3 +12,14 @@ exports.createFeedback = (req, res) => {
 
   newFeedback.save();
 };
+exports.getall=async(req,res)=>{
+  console.log("getall");
+  const coursecode=req.body.courseCode;
+  const getall=await Feedback.find({coursecode:coursecode});
+  if(getall){
+    res.status(200).send(getall);
+  }
+  else{
+    res.status(404).send("NO DATA FOUND");
+  }
+}
