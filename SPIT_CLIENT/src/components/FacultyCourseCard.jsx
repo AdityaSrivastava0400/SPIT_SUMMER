@@ -5,6 +5,7 @@ import ReviewForm from "./ReviewForm";
 import StarRatingForm from "./Starrat";
 import axios from "axios";
 import { API_URL } from "../config";
+import { FacultyReviewForm } from "./FacultyReviewForm";
 
 export function FacultyCourseCard(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,7 +29,7 @@ export function FacultyCourseCard(props) {
           <div className="upper">
             <div className="heading">
               <span className="coursename">{props.course.courseName}</span>
-              <span className="coursecode">({props.course.courseCode}</span>
+              <span className="coursecode">({props.course.courseCode})</span>
             </div>
           </div>
           <button
@@ -45,9 +46,9 @@ export function FacultyCourseCard(props) {
       <div>
         <div className="productModalContent">
           {isModalOpen && (
-            <ReviewForm
-              name={props.name}
-              coursecode={props.coursecode}
+            <FacultyReviewForm
+              
+              data={props.course}
               onClose={closeModal}
             />
           )}
