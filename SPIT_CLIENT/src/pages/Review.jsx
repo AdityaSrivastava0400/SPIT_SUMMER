@@ -67,6 +67,7 @@ const Review = () => {
   return (
     <div className="prods">
       {commonCourses.map((course, index) => (
+        
         <Card
           key={index}
           coursename={course.courseName}
