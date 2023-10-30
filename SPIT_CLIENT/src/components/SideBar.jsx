@@ -144,41 +144,41 @@ export default function MiniDrawer({ setIsLoggedIn }) {
   };
 
   console.log(user);
-  // if (user != null) {
-  // if (user.designation != null) {
-  //   if (user.designation === "Principal") {
-  //     SideBarData.map((item, index) => {
-  //       if (item.title === "Appraisal") {
-  //         SideBarData.splice(index, 1);
-  //       }
-  //       if (item.title === "Feedback") {
-  //         SideBarData.splice(index, 1);
-  //       }
-  //       if (item.title === "FeedbackFaculty") {
-  //         SideBarData.splice(index, 1);
-  //       }
-  //     });
-  //   }
-  //   if (
-  //     user.designation != "Associate Professor" &&
-  //     user.designation != "Assistant Professor" &&
-  //     user.designation != "Professor"
-  //   ) {
-  //     SideBarData.map((item, index) => {
-  //       if (item.title === "FeedbackFaculty") {
-  //         SideBarData.splice(index, 1);
-  //       }
-  //     });
-  //   }
-  //   if (user.designation != "Student") {
-  //     SideBarData.map((item, index) => {
-  //       if (item.title === "Feedback") {
-  //         SideBarData.splice(index, 1);
-  //       }
-  //     });
-  //   }
-  //   // }
-  // }
+  if (user != null) {
+  if (user.designation != null) {
+    if (user.designation === "Principal") {
+      SideBarData.map((item, index) => {
+        if (item.title === "Appraisal") {
+          SideBarData.splice(index, 1);
+        }
+        if (item.title === "Feedback") {
+          SideBarData.splice(index, 1);
+        }
+        if (item.title === "FeedbackFaculty") {
+          SideBarData.splice(index, 1);
+        }
+      });
+    }
+    if (
+      user.designation != "Associate Professor" &&
+      user.designation != "Assistant Professor" &&
+      user.designation != "Professor"
+    ) {
+      SideBarData.map((item, index) => {
+        if (item.title === "FeedbackFaculty") {
+          SideBarData.splice(index, 1);
+        }
+      });
+    }
+    if (user.designation != "Student") {
+      SideBarData.map((item, index) => {
+        if (item.title === "Feedback") {
+          SideBarData.splice(index, 1);
+        }
+      });
+    }
+    }
+  }
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -216,7 +216,7 @@ export default function MiniDrawer({ setIsLoggedIn }) {
             <div>
               <IconButton onClick={handleClick}>
                 <img
-                  // src={userInfo.picture}
+                  src={userInfo.picture}
                   alt="profile"
                   className="profile-pic"
                 />
@@ -336,6 +336,7 @@ export default function MiniDrawer({ setIsLoggedIn }) {
           {/* {user.designation === "HOD" && ( */}
 
           {
+            user.designation=="HOD"&&
             <ListItem
               key={"Dept Appraisal"}
               disablePadding
@@ -393,8 +394,9 @@ export default function MiniDrawer({ setIsLoggedIn }) {
           }
 
           {/*user.designation === "Principal" && */}
-
+          
           {
+            user.designation=="Principal"&&
             <ListItem
               key={"View Appraisal"}
               disablePadding

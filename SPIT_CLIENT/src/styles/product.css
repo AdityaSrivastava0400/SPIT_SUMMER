@@ -18,6 +18,7 @@
 
 .productCard {
   width: 100%;
+  
   padding: 1rem;
   position: relative;
   background-color: var(--color-grey-primary);
@@ -42,8 +43,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  /* gap: 1rem; */
-  padding: rem;
+  padding: 1rem;
 }
 .heading {
   display: flex;
@@ -66,7 +66,7 @@
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
   box-sizing: border-box;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
