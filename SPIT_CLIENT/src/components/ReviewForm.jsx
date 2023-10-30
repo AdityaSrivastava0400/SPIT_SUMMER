@@ -7,7 +7,7 @@ import { API_URL } from "../config";
 import { UserContext } from "../context/UserContext";
 // import { AiOutlineClose } from "react-icons/fa";
 
-const ReviewForm = ({ name, coursecode, onClose }) => {
+const ReviewForm = ({ name, coursecode, onClose,setfeedgiven }) => {
   // const ReviewForm = () => {
   const { user } = useContext(UserContext);
   const [rating, setRating] = useState(0);
@@ -55,6 +55,8 @@ const ReviewForm = ({ name, coursecode, onClose }) => {
         axios.post(API_URL + "/api/student/addcourse", passuser),
         axios.post(API_URL + "/api/feedback/create", data),
         onClose(),
+        setfeedgiven(true),
+        localStorage.setItem(`${coursecode}`,'true'),
       ]);
       // Both requests have completed successfully
     } catch (error) {
@@ -164,7 +166,7 @@ const ReviewForm = ({ name, coursecode, onClose }) => {
               in-depth learning, self-learning and triggered thinking.
             </h6>
           </span>
-          <StarRatingForm val={evals} seteval={setEvals} />
+          <StarRatingForm val={evals} setval={setEvals} />
         </div>
         <div className="txtarea">
           <span>Comment</span>
