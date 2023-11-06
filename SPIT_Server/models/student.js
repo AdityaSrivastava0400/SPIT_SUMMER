@@ -86,7 +86,7 @@ const studentSchema = new mongoose.Schema({
   ],
   facultyreview: {
     type: [String],
-    unique: true,
+    
   },
 });
 
